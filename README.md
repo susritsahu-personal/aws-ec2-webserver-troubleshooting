@@ -24,6 +24,13 @@ The environment was used to simulate and troubleshoot common cloud support incid
 
 ## Troubleshooting Scenarios
 
+### Detailed Incident Documentation
+
+- [Incident 1: Security Group Connectivity Issue](documentation/incident-1-security-group.md)
+- [Incident 2: Nginx Service Failure](documentation/incident-2-nginx-service.md)
+- [Incident 3: High CPU Utilization](documentation/incident-3-high-cpu.md)
+- [Incident 4: Increased Disk Utilization](documentation/incident-4-disk-utilization.md)
+
 ### Incident 1: Website Inaccessible Due to Security Group
 
 The HTTP inbound rule was removed from the EC2 Security Group to simulate an externally inaccessible website.
