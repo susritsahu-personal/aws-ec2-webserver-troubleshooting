@@ -84,3 +84,34 @@ The incident was investigated using:
 High CPU utilization does not automatically mean that an application is unavailable. CPU metrics should be correlated with running processes and application health before taking corrective action.
 
 Linux tools such as `ps` and `top`, combined with Amazon CloudWatch metrics, can help identify and investigate CPU-related incidents.
+
+## CloudWatch Alarm and SNS Alerting
+
+To extend the monitoring scenario, a CloudWatch alarm was configured for the EC2 `CPUUtilization` metric.
+
+### Alarm Configuration
+- Metric: CPUUtilization
+- Statistic: Average
+- Period: 5 minutes
+- Threshold: Greater than 70%
+- Datapoints to alarm: 1 out of 1
+- Alarm name: EC2-High-CPU-Alarm
+- Notification: Amazon SNS email notification
+
+### Alert Testing
+
+A controlled high-CPU condition was generated using two `yes` processes. CloudWatch detected that the average CPU utilization exceeded the configured threshold, causing the alarm to transition from **OK** to **ALARM**.
+
+The CloudWatch alarm successfully triggered an Amazon SNS email notification.
+
+After confirming the alert, the CPU-intensive processes were stopped using:
+
+`pkill yes`
+
+CPU utilization then began returning to its normal level.
+
+### Result
+
+Successfully demonstrated an end-to-end monitoring and incident-response workflow:
+
+High CPU → CloudWatch Detection → Alarm Triggered → SNS Notification → Investigation → CPU Load Stopped → Recovery
