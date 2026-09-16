@@ -64,6 +64,32 @@ A temporary large file was created to simulate increased disk utilization.
 
 Amazon CloudWatch was used to monitor EC2 CPU utilization. A CPU utilization alarm was configured as part of the monitoring practice.
 
+## Project Evidence
+
+### Nginx Web Server
+
+![Nginx Web Server Running](screenshots/nginx-webserver-running.png)
+
+### Security Group Configuration
+
+HTTP port 80 was configured to allow external web traffic.
+
+![HTTP Security Group Rule](screenshots/incident-1-http-security-group.png)
+
+### High CPU Monitoring
+
+A controlled CPU load test was performed and monitored using Amazon CloudWatch.
+
+![CloudWatch High CPU Utilization](screenshots/incident-3-cloudwatch-high-cpu.png)
+
+### Disk Utilization Troubleshooting
+
+Disk utilization was increased using a temporary test file, investigated using Linux commands, and restored after identifying and removing the file.
+
+![Disk Utilization Investigation](screenshots/incident-4-disk-utilization-investigation.png)
+
+![Disk Utilization Recovery](screenshots/incident-4-disk-utilization-recovery.png)
+
 ## Troubleshooting Commands Used
 
 `systemctl` | `journalctl` | `top` | `ps` | `df` | `du` | `curl` | `ss`
