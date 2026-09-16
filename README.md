@@ -15,6 +15,7 @@ The project focuses on identifying issues systematically, finding the root cause
 - Amazon CloudWatch
 - Linux
 - SSH
+- Amazon SNS
 
 ## Environment
 
@@ -69,7 +70,9 @@ A temporary large file was created to simulate increased disk utilization.
 
 ## Monitoring
 
-Amazon CloudWatch was used to monitor EC2 CPU utilization. A CPU utilization alarm was configured as part of the monitoring practice.
+Amazon CloudWatch was used to monitor EC2 CPU utilization. A CPU utilization alarm was configured to trigger when average CPU usage exceeded 70% over a 5-minute period. Amazon SNS was configured to send an email notification when the alarm entered the ALARM state.
+
+The alerting workflow was tested using a controlled CPU load. CloudWatch detected the high CPU utilization, the alarm transitioned from OK to ALARM, and an SNS email notification was successfully received. After stopping the CPU-intensive processes, CPU utilization returned toward normal levels.
 
 ## Project Evidence
 
@@ -85,9 +88,9 @@ HTTP port 80 was configured to allow external web traffic.
 
 ### High CPU Monitoring
 
-A controlled CPU load test was performed and monitored using Amazon CloudWatch.
+A CloudWatch alarm successfully entered the ALARM state when the CPU utilization threshold was exceeded.
 
-![CloudWatch High CPU Utilization](screenshots/incident-3-cloudwatch-high-cpu.png)
+![CloudWatch High CPU Alarm Triggered](screenshots/cloudwatch-high-cpu-alarm-triggered.png)
 
 ### Disk Utilization Troubleshooting
 
