@@ -113,4 +113,4 @@ Disk utilization was increased using a temporary test file, investigated using L
 
 ## Project Status
 
-Core deployment and troubleshooting scenarios completed. Documentation and supporting screenshots are being added to the repository.
+Completed. The project includes EC2 web server deployment, four simulated troubleshooting scenarios, CloudWatch CPU monitoring, detailed incident documentation, and supporting screenshots.
