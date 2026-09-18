@@ -6,6 +6,12 @@ This project demonstrates hands-on AWS Cloud Support and Linux troubleshooting b
 
 The project focuses on identifying issues systematically, finding the root cause, restoring service, and verifying recovery.
 
+## Architecture Diagram
+
+The diagram below shows the EC2 web server environment used for deployment, monitoring, and troubleshooting practice.
+
+![AWS EC2 Web Server Troubleshooting Architecture](architecture-diagram.png)
+
 ## Technologies Used
 
 - Amazon EC2
